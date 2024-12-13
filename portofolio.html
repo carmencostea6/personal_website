@@ -1,0 +1,128 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Portfolio</title>
+    <link rel="stylesheet" href="style.css" />
+    <link rel="stylesheet" href="port.css" />
+  </head>
+  <body>
+    <!-- Header Section -->
+    <header>
+        <button class="hamburger">☰</button>
+        <ul class="navbar">
+          <li class="logo-item">
+            <a href="home.html"><img src="logo.jpg" alt="Home" class="logo-nav" /></a>
+          </li>
+          <li><a href="cv.html">CV</a></li>
+          <li><a href="contact.html">Contact</a></li>
+          <li><a href="portofolio.html">Portfolio</a></li>
+        </ul>
+    </header>
+
+    <h1>My Passions</h1>
+    <hr>
+
+    <!-- Carousels Section -->
+    <div class="carousel-section">
+      <!-- Art Carousel -->
+      <div class="w3-content w3-section" style="max-width:500px">
+        <h2>ART</h2>
+        <hr>
+        <img class="mySlides art" src="art (9).jpg" style="width:100%">
+        <img class="mySlides art" src="art (8).jpg" style="width:100%">
+        <img class="mySlides art" src="art (3).jpg" style="width:100%">
+        <img class="mySlides art" src="art (4).jpg" style="width:100%">
+        <img class="mySlides art" src="art (5).jpg" style="width:100%">
+        <img class="mySlides art" src="art (6).jpg" style="width:100%">
+        <img class="mySlides art" src="art (7).jpg" style="width:100%">
+      </div>
+
+      <!-- Travel Carousel -->
+      <div class="w3-content w3-section" style="max-width:500px">
+        <h2>TRAVEL</h2>
+        <hr>
+        <img class="mySlides travel" src="hobbies (2 of 26).jpg" style="width:100%">
+        <img class="mySlides travel" src="hobbies (3 of 26).jpg" style="width:100%">
+        <img class="mySlides travel" src="hobbies (7 of 26).jpg" style="width:100%">
+        <img class="mySlides travel" src="hobbies (4 of 26).jpg" style="width:100%">
+        <img class="mySlides travel" src="hobbies (5 of 26).jpg" style="width:100%">
+        <img class="mySlides travel" src="hobbies (6 of 26).jpg" style="width:100%">
+        <img class="mySlides travel" src="hobbies (8 of 26).jpg" style="width:100%">
+      </div>
+
+      <!-- Sports Carousel -->
+      <div class="w3-content w3-section" style="max-width:500px">
+        <h2>SPORTS</h2>
+        <hr>
+        <img class="mySlides sports" src="20241209_204929000_iOS.jpg" style="width:100%">
+        <img class="mySlides sports" src="20241209_204619000_iOS.jpg" style="width:100%">
+        <img class="mySlides sports" src="20241209_204816000_iOS.jpg" style="width:100%">
+        <img class="mySlides sports" src="20241209_204818000_iOS.jpg" style="width:100%">
+        <img class="mySlides sports" src="20241209_204832000_iOS.jpg" style="width:100%">
+        <img class="mySlides sports" src="20241209_204850000_iOS.jpg" style="width:100%">
+        <img class="mySlides sports" src="20241209_204929000_iOS.jpg" style="width:100%">
+      </div>
+
+      <!-- Volunteering Carousel -->
+      <div class="w3-content w3-section" style="max-width:500px">
+        <h2>VOLUNTEERING</h2>
+        <hr>
+        <img class="mySlides projects" src="hobbies (12 of 26).jpg" style="width:100%">
+        <img class="mySlides projects" src="hobbies (13 of 26).jpg" style="width:100%">
+        <img class="mySlides projects" src="hobbies (14 of 26).jpg" style="width:100%">
+        <img class="mySlides projects" src="hobbies (11 of 26).jpg" style="width:100%">
+        <img class="mySlides projects" src="hobbies (26 of 26).jpg" style="width:100%">
+        <img class="mySlides projects" src="hobbies (27 of 26).jpg" style="width:100%">
+        <img class="mySlides projects" src="hobbies (25 of 26).jpg" style="width:100%">
+      </div>
+    </div>
+
+    <div class="description">
+      <p>These are some of the projects I was involved in during my high school and
+        college years.
+      </p>
+    </div>
+
+    <footer>©️ 2024 Costea Carmen Andreea - All rights reserved.</footer>
+
+    <!-- Scripts -->
+    <script>
+      // Burger Menu Script
+      document.addEventListener("DOMContentLoaded", () => {
+        const hamburger = document.querySelector(".hamburger");
+        const navbar = document.querySelector(".navbar");
+
+        hamburger.addEventListener("click", () => {
+          navbar.classList.toggle("active"); // Afișează/ascunde meniul
+        });
+      });
+
+      // Carousels Script
+      function startCarousel(className) {
+        let index = 0;
+        const slides = document.getElementsByClassName(className);
+
+        function showSlides() {
+          for (let i = 0; i < slides.length; i++) {
+            slides[i].style.display = "none";
+          }
+          index++;
+          if (index > slides.length) { index = 1; }
+          slides[index - 1].style.display = "block";
+          setTimeout(showSlides, 2500); // Schimbare slide la fiecare 2.5 secunde
+        }
+
+        showSlides();
+      }
+
+      document.addEventListener("DOMContentLoaded", () => {
+        startCarousel("art");
+        startCarousel("travel");
+        startCarousel("sports");
+        startCarousel("projects");
+      });
+    </script>
+  </body>
+</html>
